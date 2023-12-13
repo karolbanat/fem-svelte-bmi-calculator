@@ -114,13 +114,85 @@ textarea:not([rows]) {
 /* Custom properties setup */
 :root {
 	/* colours */
+	/* --- primary */
+	--clr-primary-200-hsl: 211deg 40% 69%;
+	--clr-primary-300-hsl: 227deg 100% 67%;
+	--clr-primary-400-hsl: 227deg 92% 58%;
+	--clr-primary-700-hsl: 215deg 31% 21%;
+
+	--clr-primary-200: hsl(var(--clr-primary-200-hsl));
+	--clr-primary-300: hsl(var(--clr-primary-300-hsl));
+	--clr-primary-400: hsl(var(--clr-primary-400-hsl));
+	--clr-primary-700: hsl(var(--clr-primary-700-hsl));
+
+	/* --- neutrals */
+	--clr-neutral-100-hsl: 0deg 0% 100%;
+	--clr-neutral-400-hsl: 200deg 24% 88%;
+	--clr-neutral-700-hsl: 215deg 17% 45%;
+
+	--clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+	--clr-neutral-400: hsl(var(--clr-neutral-400-hsl));
+	--clr-neutral-700: hsl(var(--clr-neutral-700-hsl));
+
+	/* --- gradients */
+	--clr-gradient-200-hsl: 184deg 95% 92%;
+	--clr-gradient-400-hsl: 216deg 95% 92%;
+
+	--clr-gradient-200: hsl(var(--clr-gradient-200-hsl) / 0);
+	--clr-gradient-400: hsl(var(--clr-gradient-400-hsl));
+
+	--gradient-400: linear-gradient(to bottom right, var(--clr-gradient-200) 0%, var(--clr-gradient-400) 100%);
+
+	--clr-drop-shadow: hsl(var(--clr-primary-200-hsl) / 0.25);
+
+	/* dropshadow */
+	--dropshadow-200: 1rem 2rem 3.5rem var(--clr-drop-shadow);
 
 	/* font */
 	--ff-primary: 'Inter', sans-serif;
+
+	/* --- font sizes */
+	--fz-300: 0.875rem;
+	--fz-400: 1rem;
+	--fz-500: 1.25rem;
+	--fz-600: 1.5rem;
+	--fz-700: clamp(2rem, 3.5vw, 3rem);
+	--fz-800: clamp(3rem, 5vw, 4rem);
+
+	/* spacers - base */
+	/* --- rem */
+	--spacer-rem-100: 0.5rem;
+	--spacer-rem-200: 1rem;
+	--spacer-rem-300: 1.5rem;
+	--spacer-rem-400: 2rem;
+	--spacer-rem-500: 2.5rem;
+	--spacer-rem-600: 3rem;
+	--spacer-rem-700: 3.5rem;
+	--spacer-rem-800: 4rem;
+	--spacer-rem-900: 4.5rem;
+
+	/* --- em */
+	--spacer-em-100: 0.25em;
+	--spacer-em-200: 0.5em;
+	--spacer-em-300: 0.75em;
+	--spacer-em-400: 1em;
+	--spacer-em-500: 1.25em;
+	--spacer-em-600: 1.5em;
+	--spacer-em-700: 1.75em;
+	--spacer-em-800: 2em;
+	--spacer-em-900: 2.25em;
 }
 
 body {
 	font-family: var(--ff-primary);
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.05em;
+	line-height: 1.1;
+	color: var(--clr-primary-700);
 }
 
 /* Utility */
@@ -136,10 +208,10 @@ body {
 
 /* Layout */
 .wrapper {
-	--max-width: 69.375rem;
+	--max-width: 72.5rem;
 	--padding-inline: 1.5rem;
 	margin-inline: auto;
-	width: min(var(--max-width), 100% - 2 * var(--padding-inline));
+	inline-size: min(var(--max-width), 100% - 2 * var(--padding-inline));
 }
 
 .flow > * + * {
