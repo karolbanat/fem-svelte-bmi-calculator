@@ -185,6 +185,7 @@ textarea:not([rows]) {
 
 body {
 	font-family: var(--ff-primary);
+	color: var(--clr-neutral-700);
 }
 
 h1,
@@ -207,11 +208,21 @@ h3 {
 }
 
 /* Layout */
-.wrapper {
+.wrapper-grid {
 	--max-width: 72.5rem;
-	--padding-inline: 1.5rem;
-	margin-inline: auto;
-	inline-size: min(var(--max-width), 100% - 2 * var(--padding-inline));
+	--padding-inline: clamp(1.5rem, 5vw, 2.5rem);
+
+	display: grid;
+	grid-template-columns:
+		minmax(var(--padding-inline), 1fr)
+		[wrapper-start]
+		min(100% - 2 * var(--padding-inline), var(--max-width))
+		[wrapper-end]
+		minmax(var(--padding-inline), 1fr);
+}
+
+.wrapper-grid > * {
+	grid-column: wrapper;
 }
 
 .flow > * + * {
