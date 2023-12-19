@@ -196,6 +196,14 @@ h3 {
 	color: var(--clr-primary-700);
 }
 
+h1 {
+	font-size: var(--fz-800);
+}
+
+h2 {
+	font-size: var(--fz-700);
+}
+
 /* Utility */
 .visually-hidden {
 	clip: rect(0 0 0 0);
