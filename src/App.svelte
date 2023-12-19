@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BMIForm from './lib/BMIForm.svelte';
 	import Navigation from './lib/Navigation.svelte';
 </script>
 
@@ -14,6 +15,7 @@
 			</p>
 		</div>
 	</div>
+	<BMIForm />
 </header>
 <main></main>
 
