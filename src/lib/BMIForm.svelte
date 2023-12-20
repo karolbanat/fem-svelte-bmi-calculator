@@ -1,23 +1,35 @@
 <script lang="ts">
-	let unit: 'metric' | 'imperial' = 'metric';
+	import RadioButton from './form-components/RadioButton.svelte';
+
+	type Unit = 'metric' | 'imperial';
+
+	let unit: Unit = 'metric';
+
+	function handleChange(event: { detail: { value: string } }) {
+		unit = event.detail.value as Unit;
+	}
 </script>
 
 <form>
 	<p class="form-heading">Enter your details below</p>
 
 	<fieldset>
-		<div class="custom-radio-input">
-			<input type="radio" name="measurement-unit" id="metric" checked={unit === 'metric'} />
-			<label for="metric">
-				<span>Metric</span>
-			</label>
-		</div>
-		<div class="custom-radio-input">
-			<input type="radio" name="measurement-unit" id="imperial" checked={unit === 'imperial'} />
-			<label for="imperial">
-				<span>Imperial</span>
-			</label>
-		</div>
+		<RadioButton
+			name="measurement-unit"
+			id="metric"
+			value="metric"
+			checked={unit === 'metric'}
+			label="Metric"
+			on:change={handleChange}
+		/>
+		<RadioButton
+			name="measurement-unit"
+			id="imperial"
+			value="imperial"
+			checked={unit === 'imperial'}
+			label="Imperial"
+			on:change={handleChange}
+		/>
 	</fieldset>
 
 	<fieldset>
@@ -37,4 +49,8 @@
 	</output>
 </form>
 
-<style></style>
+<style>
+	fieldset {
+		border: none;
+	}
+</style>
