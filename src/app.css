@@ -151,6 +151,10 @@ textarea:not([rows]) {
 	/* font */
 	--ff-primary: 'Inter', sans-serif;
 
+	/* -- font weights */
+	--fw-regular: 400;
+	--fw-bold: 600;
+
 	/* --- font sizes */
 	--fz-300: 0.875rem;
 	--fz-400: 1rem;
@@ -185,12 +189,14 @@ textarea:not([rows]) {
 
 body {
 	font-family: var(--ff-primary);
+	font-weight: var(--fw-regular);
 	color: var(--clr-neutral-700);
 }
 
 h1,
 h2,
 h3 {
+	font-weight: var(--fw-bold);
 	letter-spacing: -0.05em;
 	line-height: 1.1;
 	color: var(--clr-primary-700);
@@ -231,6 +237,13 @@ h2 {
 
 .wrapper-grid > * {
 	grid-column: wrapper;
+}
+
+.even-columns {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	gap: var(--spacer-rem-300);
 }
 
 .flow > * + * {

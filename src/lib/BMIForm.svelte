@@ -13,7 +13,7 @@
 <form>
 	<p class="form-heading">Enter your details below</p>
 
-	<fieldset>
+	<fieldset class="even-columns">
 		<RadioButton
 			name="measurement-unit"
 			id="metric"
@@ -50,6 +50,10 @@
 </form>
 
 <style>
+	form {
+		display: grid;
+		gap: clamp(var(--spacer-rem-300), 4vw, var(--spacer-rem-400));
+	}
 	fieldset {
 		border: none;
 	}
