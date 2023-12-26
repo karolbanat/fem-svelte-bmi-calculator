@@ -1,13 +1,17 @@
 <script lang="ts">
-	export let unitShortcut: string;
+	export let label: string;
 	export let value: number;
 	export let name: string;
 	export let id: string;
 	export let step: number = 1;
+	export let min: number = 0;
+	export let max: number;
+
+	export let unitShortcut: string;
 </script>
 
 <div class="input-container">
-	<input type="number" {name} {id} bind:value {step} />
+	<input aria-label={label} type="number" {name} {id} bind:value {step} {min} {max} placeholder="0" />
 	<span>{unitShortcut}</span>
 </div>
 

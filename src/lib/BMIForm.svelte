@@ -6,6 +6,11 @@
 	let unit: Unit = 'metric';
 	let centimeters: number;
 	let kilograms: number;
+
+	let feet: number;
+	let inches: number;
+	let stones: number;
+	let pounds: number;
 </script>
 
 <form>
@@ -30,16 +35,58 @@
 		/>
 	</fieldset>
 
-	<fieldset>
-		<div>
-			<label for="height">Height</label>
-			<NumericInput unitShortcut="cm" id="height" name="height" bind:value={centimeters} />
-		</div>
-		<div>
-			<label for="weight">Weight</label>
-			<NumericInput unitShortcut="kg" id="weight" name="weight" bind:value={kilograms} />
-		</div>
-	</fieldset>
+	<div>
+		<fieldset>
+			<legend>Height</legend>
+			<div>
+				{#if unit === 'metric'}
+					<NumericInput
+						label="Centimeters"
+						id="height-cm"
+						name="height-cm"
+						max={300}
+						bind:value={centimeters}
+						unitShortcut="cm"
+					/>
+				{:else}
+					<NumericInput label="Feet" id="height-ft" name="height-ft" max={10} bind:value={feet} unitShortcut="ft" />
+					<NumericInput label="Inches" id="height-in" name="height-in" max={11} bind:value={inches} unitShortcut="in" />
+				{/if}
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Weight</legend>
+			<div>
+				{#if unit === 'metric'}
+					<NumericInput
+						label="Kilograms"
+						id="weight-kg"
+						name="weight-kg"
+						max={1000}
+						bind:value={kilograms}
+						unitShortcut="kg"
+					/>
+				{:else}
+					<NumericInput
+						label="Stones"
+						id="weight-st"
+						name="weight-st"
+						max={150}
+						bind:value={stones}
+						unitShortcut="st"
+					/>
+					<NumericInput
+						label="Pounds"
+						id="weight-lbs"
+						name="weight-lbs"
+						max={13}
+						bind:value={pounds}
+						unitShortcut="lbs"
+					/>
+				{/if}
+			</div>
+		</fieldset>
+	</div>
 
 	<output>
 		<p>Welcome!</p>
