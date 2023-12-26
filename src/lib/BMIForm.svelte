@@ -1,8 +1,11 @@
 <script lang="ts">
 	import type { Unit } from '../types';
+	import NumericInput from './form-components/NumericInput.svelte';
 	import RadioButton from './form-components/RadioButton.svelte';
 
 	let unit: Unit = 'metric';
+	let centimeters: number;
+	let kilograms: number;
 </script>
 
 <form>
@@ -30,11 +33,11 @@
 	<fieldset>
 		<div>
 			<label for="height">Height</label>
-			<input type="number" min="0" step="1" placeholder="0" id="height" />
+			<NumericInput unitShortcut="cm" id="height" name="height" bind:value={centimeters} />
 		</div>
 		<div>
 			<label for="weight">Weight</label>
-			<input type="number" min="0" step="1" placeholder="0" id="weight" />
+			<NumericInput unitShortcut="kg" id="weight" name="weight" bind:value={kilograms} />
 		</div>
 	</fieldset>
 
