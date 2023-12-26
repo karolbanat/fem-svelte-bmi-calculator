@@ -4,10 +4,6 @@
 	type Unit = 'metric' | 'imperial';
 
 	let unit: Unit = 'metric';
-
-	function handleChange(event: { detail: { value: string } }) {
-		unit = event.detail.value as Unit;
-	}
 </script>
 
 <form>
@@ -20,7 +16,7 @@
 			value="metric"
 			checked={unit === 'metric'}
 			label="Metric"
-			on:change={handleChange}
+			bind:selectedValue={unit}
 		/>
 		<RadioButton
 			name="measurement-unit"
@@ -28,7 +24,7 @@
 			value="imperial"
 			checked={unit === 'imperial'}
 			label="Imperial"
-			on:change={handleChange}
+			bind:selectedValue={unit}
 		/>
 	</fieldset>
 
