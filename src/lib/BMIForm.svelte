@@ -1,7 +1,6 @@
 <script lang="ts">
+	import type { Unit } from '../types';
 	import RadioButton from './form-components/RadioButton.svelte';
-
-	type Unit = 'metric' | 'imperial';
 
 	let unit: Unit = 'metric';
 </script>
