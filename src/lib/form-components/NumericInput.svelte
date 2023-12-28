@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { cubicOut } from 'svelte/easing';
+	import { blur } from 'svelte/transition';
+
 	export let label: string;
 	export let value: number;
 	export let name: string;
@@ -11,7 +14,18 @@
 </script>
 
 <div class="input-container">
-	<input aria-label={label} type="number" {name} {id} bind:value {step} {min} {max} placeholder="0" />
+	<input
+		aria-label={label}
+		type="number"
+		{name}
+		{id}
+		bind:value
+		{step}
+		{min}
+		{max}
+		placeholder="0"
+		in:blur={{ duration: 750, easing: cubicOut, amount: '1rem' }}
+	/>
 	<span>{unitShortcut}</span>
 </div>
 
