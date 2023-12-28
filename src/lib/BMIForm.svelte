@@ -35,10 +35,10 @@
 		/>
 	</fieldset>
 
-	<div>
+	<div class="even-columns-fluid" style={unit === 'metric' ? '' : '--fluid-size: 1fr;'}>
 		<fieldset>
 			<legend>Height</legend>
-			<div>
+			<div class={unit === 'metric' ? '' : 'even-columns'}>
 				{#if unit === 'metric'}
 					<NumericInput
 						label="Centimeters"
@@ -56,7 +56,7 @@
 		</fieldset>
 		<fieldset>
 			<legend>Weight</legend>
-			<div>
+			<div class={unit === 'metric' ? '' : 'even-columns'}>
 				{#if unit === 'metric'}
 					<NumericInput
 						label="Kilograms"
@@ -101,5 +101,10 @@
 	}
 	fieldset {
 		border: none;
+	}
+
+	fieldset > legend {
+		margin-block-end: var(--spacer-rem-100, 0.5em);
+		font-size: var(--fz-300);
 	}
 </style>

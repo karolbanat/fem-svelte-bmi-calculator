@@ -242,8 +242,14 @@ h2 {
 .even-columns {
 	display: grid;
 	grid-auto-flow: column;
-	grid-auto-columns: 1fr;
-	gap: var(--spacer-rem-300);
+	grid-auto-columns: var(--even-columns-size, 1fr);
+	gap: var(--even-columns-spacer, var(--spacer-rem-300));
+}
+
+.even-columns-fluid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--fluid-size, 17.5rem), 1fr));
+	gap: var(--even-columns-fluid-spacer, var(--spacer-rem-300));
 }
 
 .flow > * + * {
