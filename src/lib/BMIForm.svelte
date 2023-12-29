@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Unit } from '../types';
+	import BmiOutput from './form-components/BMIOutput.svelte';
 	import NumericInput from './form-components/NumericInput.svelte';
 	import RadioButton from './form-components/RadioButton.svelte';
 
@@ -88,10 +89,7 @@
 		</fieldset>
 	</div>
 
-	<output>
-		<p>Welcome!</p>
-		<p>Enter your height and weight and you'll see your BMI result here</p>
-	</output>
+	<BmiOutput />
 </form>
 
 <style>
