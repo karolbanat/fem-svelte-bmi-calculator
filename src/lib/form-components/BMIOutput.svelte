@@ -1,8 +1,27 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import { roundToTwoDecimals } from '../../utils/utils';
+
+	export let kilograms: number = 0;
+	export let centimeters: number = 0;
+
+	$: calculateBMI = () => kilograms / Math.pow(centimeters / 100, 2);
+</script>
 
 <output>
-	<p class="heading">Welcome!</p>
-	<p>Enter your height and weight and you'll see your BMI result here</p>
+	{#if kilograms === 0 || centimeters == 0}
+		<p class="heading">Welcome!</p>
+		<p>Enter your height and weight and you'll see your BMI result here</p>
+	{:else}
+		<div class="even-columns-fluid" style="--fluid-size: 10rem">
+			<div>
+				<p>Your BMI is...</p>
+				<p class="bmi-result">{roundToTwoDecimals(calculateBMI())}</p>
+			</div>
+			<div>
+				<p>Your BMI suggests you're a healthy weight. Your ideal weight is between 63.3kgs - 85.2kgs.</p>
+			</div>
+		</div>
+	{/if}
 </output>
 
 <style>

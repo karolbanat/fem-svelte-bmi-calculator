@@ -138,7 +138,7 @@
 		</fieldset>
 	</div>
 
-	<BmiOutput />
+	<BmiOutput {kilograms} {centimeters} />
 </form>
 
 <style>
