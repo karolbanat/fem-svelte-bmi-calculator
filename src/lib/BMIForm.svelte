@@ -65,7 +65,7 @@
 		/>
 	</fieldset>
 
-	<div class="even-columns-fluid" style={unit === 'metric' ? '' : '--fluid-size: 1fr;'}>
+	<div class="even-columns-fluid" style={unit === 'metric' ? '--fluid-size: 12.5rem' : '--fluid-size: 1fr;'}>
 		<fieldset>
 			<legend>Height</legend>
 			<div class={unit === 'metric' ? '' : 'even-columns'}>
