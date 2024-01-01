@@ -4,7 +4,34 @@
 	export let kilograms: number = 0;
 	export let centimeters: number = 0;
 
-	$: calculateBMI = () => kilograms / Math.pow(centimeters / 100, 2);
+	const classifications = [
+		{
+			lowerBound: 0,
+			upperBound: 18.5,
+			name: 'underweight',
+		},
+		{
+			lowerBound: 18.5,
+			upperBound: 24.9,
+			name: 'healthy weight',
+		},
+		{
+			lowerBound: 25,
+			upperBound: 29.9,
+			name: 'overweight',
+		},
+		{
+			lowerBound: 30,
+			name: 'obese',
+		},
+	];
+
+	$: lowerHealthyWeight = roundToTwoDecimals(18.5 * Math.pow(centimeters / 100, 2));
+	$: upperHealthyWeight = roundToTwoDecimals(24.9 * Math.pow(centimeters / 100, 2));
+	$: BMI = kilograms / Math.pow(centimeters / 100, 2);
+	$: classification = classifications
+		.filter(range => BMI >= range.lowerBound && BMI <= (range.upperBound || Number.MAX_SAFE_INTEGER))
+		.at(0);
 </script>
 
 <output>
@@ -14,11 +41,13 @@
 	{:else}
 		<div class="even-columns-fluid" style="--fluid-size: 10rem">
 			<div>
-				<p>Your BMI is...</p>
-				<p class="bmi-result">{roundToTwoDecimals(calculateBMI())}</p>
+				<p class="bmi-kicker">Your BMI is...</p>
+				<p class="bmi-result">{roundToTwoDecimals(BMI)}</p>
 			</div>
 			<div>
-				<p>Your BMI suggests you're a healthy weight. Your ideal weight is between 63.3kgs - 85.2kgs.</p>
+				<p>
+					Your BMI suggests you're {classification?.name}. Your ideal weight is between {lowerHealthyWeight}kgs - {upperHealthyWeight}kgs.
+				</p>
 			</div>
 		</div>
 	{/if}
@@ -53,13 +82,26 @@
 		border-radius: inherit;
 	}
 
+	.heading,
+	.bmi-result {
+		font-weight: var(--fw-bold);
+		line-height: 1.1;
+		letter-spacing: -0.05em;
+	}
 	.heading {
 		margin-block-end: var(--spacer-em-200, 1em);
 
 		font-size: var(--fz-600);
+	}
+
+	.bmi-kicker {
+		font-size: var(--fz-400);
 		font-weight: var(--fw-bold);
-		line-height: 1.1;
-		letter-spacing: -0.05em;
+	}
+
+	.bmi-result {
+		margin-block-end: var(--spacer-rem-100, 0.5em);
+		font-size: var(--fz-800);
 	}
 
 	@media (min-width: 36em) {
