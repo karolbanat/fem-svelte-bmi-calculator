@@ -165,6 +165,7 @@ textarea:not([rows]) {
 	--fz-800: clamp(3rem, 5vw, 4rem);
 
 	/* Border radiuses */
+	--borr-400: 1rem;
 	--borr-pill: 100vmax;
 
 	/* spacers - base */

@@ -143,8 +143,15 @@
 
 <style>
 	form {
+		--_spacer: clamp(var(--spacer-rem-300), 4vw, var(--spacer-rem-400));
 		display: grid;
-		gap: clamp(var(--spacer-rem-300), 4vw, var(--spacer-rem-400));
+		gap: var(--_spacer);
+
+		padding: var(--_spacer);
+
+		background-color: var(--clr-neutral-100);
+		border-radius: var(--borr-400);
+		box-shadow: var(--dropshadow-200);
 	}
 	fieldset {
 		border: none;
@@ -153,5 +160,11 @@
 	fieldset > legend {
 		margin-block-end: var(--spacer-rem-100, 0.5em);
 		font-size: var(--fz-300);
+	}
+
+	.form-heading {
+		font-size: var(--fz-600);
+		font-weight: var(--fw-bold);
+		color: var(--clr-primary-700);
 	}
 </style>
