@@ -166,6 +166,7 @@ textarea:not([rows]) {
 
 	/* Border radiuses */
 	--borr-400: 1rem;
+	--borr-600: 2.25rem;
 	--borr-pill: 100vmax;
 
 	/* spacers - base */
@@ -174,6 +175,7 @@ textarea:not([rows]) {
 	--spacer-rem-200: 1rem;
 	--spacer-rem-300: 1.5rem;
 	--spacer-rem-400: 2rem;
+	--spacer-rem-450: 2.25rem;
 	--spacer-rem-500: 2.5rem;
 	--spacer-rem-600: 3rem;
 	--spacer-rem-700: 3.5rem;

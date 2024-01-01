@@ -17,7 +17,7 @@
 
 <style>
 	.heading {
-		margin-block-end: clamp(1.5rem, 4vw, 2.25rem);
+		margin-block-end: clamp(var(--spacer-rem-300), 4vw, var(--spacer-rem-450));
 	}
 
 	@media (max-width: 56em) {
