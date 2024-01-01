@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Unit } from '../types';
-	import { roundToTwoDecimals } from '../utils/utils';
+	import { roundToNthDecimal } from '../utils/utils';
 	import BmiOutput from './form-components/BMIOutput.svelte';
 	import NumericInput from './form-components/NumericInput.svelte';
 	import RadioButton from './form-components/RadioButton.svelte';
@@ -21,24 +21,24 @@
 	let pounds: number = 0;
 
 	function convertKilograms() {
-		const kgToStones: number = roundToTwoDecimals(kilograms / STONE);
+		const kgToStones: number = roundToNthDecimal(kilograms / STONE);
 		stones = Math.floor(kgToStones);
 		pounds = Math.round((kgToStones - stones) * POUNDS_IN_STONE);
 	}
 
 	function convertCentimeters() {
-		const cmToFeet: number = roundToTwoDecimals(centimeters / FOOT);
+		const cmToFeet: number = roundToNthDecimal(centimeters / FOOT);
 		feet = Math.floor(cmToFeet);
 		inches = Math.round((cmToFeet - feet) * INCHES_IN_FEET);
 	}
 
 	function convertStonesAndPounds() {
-		const poundsToStone: number = roundToTwoDecimals(pounds / POUNDS_IN_STONE);
+		const poundsToStone: number = roundToNthDecimal(pounds / POUNDS_IN_STONE);
 		kilograms = Math.round((stones + poundsToStone) * STONE);
 	}
 
 	function convertFeetAndInches() {
-		const inchesToFeet: number = roundToTwoDecimals(inches / INCHES_IN_FEET);
+		const inchesToFeet: number = roundToNthDecimal(inches / INCHES_IN_FEET);
 		centimeters = Math.round((feet + inchesToFeet) * FOOT);
 	}
 </script>

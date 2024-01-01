@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { roundToTwoDecimals } from '../../utils/utils';
+	import { roundToNthDecimal } from '../../utils/utils';
 
 	export let kilograms: number = 0;
 	export let centimeters: number = 0;
@@ -26,8 +26,8 @@
 		},
 	];
 
-	$: lowerHealthyWeight = roundToTwoDecimals(18.5 * Math.pow(centimeters / 100, 2));
-	$: upperHealthyWeight = roundToTwoDecimals(24.9 * Math.pow(centimeters / 100, 2));
+	$: lowerHealthyWeight = roundToNthDecimal(18.5 * Math.pow(centimeters / 100, 2), 1);
+	$: upperHealthyWeight = roundToNthDecimal(24.9 * Math.pow(centimeters / 100, 2), 1);
 	$: BMI = kilograms / Math.pow(centimeters / 100, 2);
 	$: classification = classifications
 		.filter(range => BMI >= range.lowerBound && BMI <= (range.upperBound || Number.MAX_SAFE_INTEGER))
@@ -39,10 +39,10 @@
 		<p class="heading">Welcome!</p>
 		<p>Enter your height and weight and you'll see your BMI result here</p>
 	{:else}
-		<div class="even-columns-fluid" style="--fluid-size: 10rem">
+		<div class="even-columns-fluid" style="--fluid-size: 12.5rem">
 			<div>
 				<p class="bmi-kicker">Your BMI is...</p>
-				<p class="bmi-result">{roundToTwoDecimals(BMI)}</p>
+				<p class="bmi-result">{roundToNthDecimal(BMI, 1)}</p>
 			</div>
 			<div>
 				<p>
