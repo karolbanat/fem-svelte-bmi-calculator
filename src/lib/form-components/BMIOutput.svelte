@@ -46,7 +46,8 @@
 			</div>
 			<div>
 				<p>
-					Your BMI suggests you're {classification?.name}. Your ideal weight is between {lowerHealthyWeight}kgs - {upperHealthyWeight}kgs.
+					Your BMI suggests you're {classification?.name}. Your ideal weight is between
+					<strong>{lowerHealthyWeight}kgs - {upperHealthyWeight}kgs</strong>.
 				</p>
 			</div>
 		</div>
