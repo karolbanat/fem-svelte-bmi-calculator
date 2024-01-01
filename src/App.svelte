@@ -5,7 +5,7 @@
 
 <header class="wrapper-grid">
 	<Navigation />
-	<div>
+	<div class="even-columns-screen vertical-center-grid">
 		<div class="flow">
 			<h1>Body Mass Index Calculator</h1>
 			<p>
@@ -14,10 +14,15 @@
 				health and well-being.
 			</p>
 		</div>
+		<BMIForm />
 	</div>
-	<BMIForm />
 </header>
 <main></main>
 
 <style>
+	@media (min-width: 62em) {
+		header {
+			padding-block-end: 5.375rem;
+		}
+	}
 </style>
