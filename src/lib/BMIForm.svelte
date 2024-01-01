@@ -1,17 +1,46 @@
 <script lang="ts">
 	import type { Unit } from '../types';
+	import { roundToTwoDecimals } from '../utils/utils';
 	import BmiOutput from './form-components/BMIOutput.svelte';
 	import NumericInput from './form-components/NumericInput.svelte';
 	import RadioButton from './form-components/RadioButton.svelte';
 
-	let unit: Unit = 'metric';
-	let centimeters: number;
-	let kilograms: number;
+	const STONE: number = 6.35029318;
+	const POUNDS_IN_STONE: number = 14;
 
-	let feet: number;
-	let inches: number;
-	let stones: number;
-	let pounds: number;
+	const FOOT: number = 30.48;
+	const INCHES_IN_FEET: number = 12;
+
+	let unit: Unit = 'metric';
+	let centimeters: number = 0;
+	let kilograms: number = 0;
+
+	let feet: number = 0;
+	let inches: number = 0;
+	let stones: number = 0;
+	let pounds: number = 0;
+
+	function convertKilograms() {
+		const kgToStones: number = roundToTwoDecimals(kilograms / STONE);
+		stones = Math.floor(kgToStones);
+		pounds = Math.round((kgToStones - stones) * POUNDS_IN_STONE);
+	}
+
+	function convertCentimeters() {
+		const cmToFeet: number = roundToTwoDecimals(centimeters / FOOT);
+		feet = Math.floor(cmToFeet);
+		inches = Math.round((cmToFeet - feet) * INCHES_IN_FEET);
+	}
+
+	function convertStonesAndPounds() {
+		const poundsToStone: number = roundToTwoDecimals(pounds / POUNDS_IN_STONE);
+		kilograms = Math.round((stones + poundsToStone) * STONE);
+	}
+
+	function convertFeetAndInches() {
+		const inchesToFeet: number = roundToTwoDecimals(inches / INCHES_IN_FEET);
+		centimeters = Math.round((feet + inchesToFeet) * FOOT);
+	}
 </script>
 
 <form>
@@ -48,10 +77,27 @@
 						max={300}
 						bind:value={centimeters}
 						unitShortcut="cm"
+						on:input={convertCentimeters}
 					/>
 				{:else}
-					<NumericInput label="Feet" id="height-ft" name="height-ft" max={10} bind:value={feet} unitShortcut="ft" />
-					<NumericInput label="Inches" id="height-in" name="height-in" max={11} bind:value={inches} unitShortcut="in" />
+					<NumericInput
+						label="Feet"
+						id="height-ft"
+						name="height-ft"
+						max={10}
+						bind:value={feet}
+						unitShortcut="ft"
+						on:input={convertFeetAndInches}
+					/>
+					<NumericInput
+						label="Inches"
+						id="height-in"
+						name="height-in"
+						max={11}
+						bind:value={inches}
+						unitShortcut="in"
+						on:input={convertFeetAndInches}
+					/>
 				{/if}
 			</div>
 		</fieldset>
@@ -66,6 +112,7 @@
 						max={1000}
 						bind:value={kilograms}
 						unitShortcut="kg"
+						on:input={convertKilograms}
 					/>
 				{:else}
 					<NumericInput
@@ -75,6 +122,7 @@
 						max={150}
 						bind:value={stones}
 						unitShortcut="st"
+						on:input={convertStonesAndPounds}
 					/>
 					<NumericInput
 						label="Pounds"
@@ -83,6 +131,7 @@
 						max={13}
 						bind:value={pounds}
 						unitShortcut="lbs"
+						on:input={convertStonesAndPounds}
 					/>
 				{/if}
 			</div>

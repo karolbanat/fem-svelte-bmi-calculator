@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import { cubicOut } from 'svelte/easing';
 	import { blur } from 'svelte/transition';
 
@@ -11,6 +13,12 @@
 	export let max: number;
 
 	export let unitShortcut: string;
+
+	const dispatch = createEventDispatcher();
+
+	function handleInput() {
+		dispatch('input', { value });
+	}
 </script>
 
 <div class="input-container">
@@ -25,6 +33,7 @@
 		{max}
 		placeholder="0"
 		in:blur={{ duration: 750, easing: cubicOut, amount: '1rem' }}
+		on:input={handleInput}
 	/>
 	<span>{unitShortcut}</span>
 </div>
