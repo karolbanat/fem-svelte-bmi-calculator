@@ -258,6 +258,14 @@ h2 {
 	gap: var(--even-columns-screen-spacer, var(--spacer-rem-300));
 }
 
+@media (min-width: 42em) {
+	.even-columns-screen--medium {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: var(--even-columns-screen-size, 1fr);
+	}
+}
+
 @media (min-width: 56em) {
 	.even-columns-screen {
 		display: grid;
@@ -274,6 +282,10 @@ h2 {
 
 .vertical-center-grid {
 	align-items: center;
+}
+
+.vertical-end-grid {
+	align-items: end;
 }
 
 .flow > * + * {

@@ -18,7 +18,21 @@
 		<BMIForm />
 	</div>
 </header>
-<main></main>
+<main class="wrapper-grid">
+	<section class="meaning-section even-columns-screen even-columns-screen--medium vertical-end-grid">
+		<img
+			src="/assets/images/image-man-eating.webp"
+			alt="Smiling man holding chopsticks with sushi roll."
+			class="meaning-section__image"
+		/>
+		<HeaderBox
+			headingLevel="h2"
+			headingText="What your BMI result means"
+			message="A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may lower your chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for regular physical activity, ideally about 30 minutes daily for five days a week."
+			paddedLeft={true}
+		/>
+	</section>
+</main>
 
 <style>
 	header {
@@ -36,6 +50,17 @@
 
 		background-image: var(--gradient-400);
 		border-radius: 0 0 var(--borr-600) var(--borr-600);
+	}
+
+	.meaning-section {
+		margin-block: clamp(4.5rem, 12.5rem, 6rem);
+	}
+
+	@media (min-width: 42em) and (max-width: 62em) {
+		.meaning-section__image {
+			justify-self: end;
+			max-width: 125%;
+		}
 	}
 
 	@media (min-width: 62em) {
