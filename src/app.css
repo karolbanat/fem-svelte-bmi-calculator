@@ -242,15 +242,21 @@ h2 {
 
 	display: grid;
 	grid-template-columns:
+		[full-width-start]
 		minmax(var(--padding-inline), 1fr)
 		[wrapper-start]
 		min(100% - 2 * var(--padding-inline), var(--max-width))
 		[wrapper-end]
-		minmax(var(--padding-inline), 1fr);
+		minmax(var(--padding-inline), 1fr)
+		[full-width-end];
 }
 
 .wrapper-grid > * {
 	grid-column: wrapper;
+}
+
+.wrapper-grid > .full-width {
+	grid-column: full-width;
 }
 
 .even-columns {

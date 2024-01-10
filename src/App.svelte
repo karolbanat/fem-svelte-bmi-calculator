@@ -38,24 +38,26 @@
 		/>
 	</section>
 
-	<section class="tips-section | section-spacer">
+	<section class="tips-section | full-width section-spacer">
 		<h2 class="visually-hidden">Tips</h2>
-		<div class="even-columns-screen" style="--even-columns-screen-spacer: var(--spacer-rem-400);">
-			<TipCard
-				icon={iconEating}
-				title="Healthy eating"
-				text="Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood."
-			/>
-			<TipCard
-				icon={iconExercise}
-				title="Regular exercise"
-				text="Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity."
-			/>
-			<TipCard
-				icon={iconSleep}
-				title="Adequate sleep"
-				text="Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation."
-			/>
+		<div class="wrapper-grid">
+			<div class="even-columns-screen" style="--even-columns-screen-spacer: var(--spacer-rem-400);">
+				<TipCard
+					icon={iconEating}
+					title="Healthy eating"
+					text="Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood."
+				/>
+				<TipCard
+					icon={iconExercise}
+					title="Regular exercise"
+					text="Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity."
+				/>
+				<TipCard
+					icon={iconSleep}
+					title="Adequate sleep"
+					text="Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation."
+				/>
+			</div>
 		</div>
 	</section>
 </main>
