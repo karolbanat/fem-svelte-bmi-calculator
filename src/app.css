@@ -192,6 +192,9 @@ textarea:not([rows]) {
 	--spacer-em-700: 1.75em;
 	--spacer-em-800: 2em;
 	--spacer-em-900: 2.25em;
+
+	/* --- other */
+	--section-spacer: clamp(4.5rem, 12.5rem, 6rem);
 }
 
 body {
@@ -226,6 +229,10 @@ h2 {
 	height: 1px;
 	overflow: hidden;
 	white-space: nowrap;
+}
+
+.section-spacer {
+	margin-block-end: var(--section-spacer, 3em);
 }
 
 /* Layout */
