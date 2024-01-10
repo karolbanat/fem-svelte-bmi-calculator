@@ -85,8 +85,21 @@
 	}
 
 	.tips-section {
+		position: relative;
+		isolation: isolate;
+
 		padding-block-start: clamp(var(--spacer-rem-700), 7.5vw, var(--spacer-rem-900));
 		padding-block-end: clamp(var(--spacer-rem-700), 7.5vw, 6rem);
+	}
+
+	.tips-section::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+
+		background-image: var(--gradient-400);
+		opacity: 0.25;
 	}
 
 	@media (min-width: 42em) and (max-width: 62em) {
@@ -106,6 +119,11 @@
 
 			width: 61.125rem;
 			height: 46rem;
+		}
+
+		.tips-section::before {
+			inset: 0 var(--spacer-rem-300);
+			border-radius: var(--borr-600);
 		}
 	}
 </style>
