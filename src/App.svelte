@@ -60,6 +60,16 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="section-spacer">
+		<HeaderBox
+			headingLevel="h2"
+			headingText="Limitations of BMI"
+			message="Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific groups should carefully consider their BMI outcomes, and in certain cases, the measurement may not be beneficial to use."
+			centered={true}
+			paddedRight={true}
+		/>
+	</section>
 </main>
 
 <style>
