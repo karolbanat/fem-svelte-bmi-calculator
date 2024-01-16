@@ -14,8 +14,11 @@
 
 <style>
 	article {
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		gap: 1rem;
+
+		max-width: 22.875rem;
 
 		padding: clamp(var(--spacer-rem-300), 4vw, var(--spacer-rem-400));
 

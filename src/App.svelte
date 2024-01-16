@@ -68,7 +68,7 @@
 		</div>
 	</section>
 
-	<section class="section-spacer">
+	<section class="limitations-layout | section-spacer">
 		<HeaderBox
 			headingLevel="h2"
 			headingText="Limitations of BMI"

@@ -304,3 +304,43 @@ h2 {
 .flow > * + * {
 	margin-top: var(--flow-spacer, 1em);
 }
+
+.limitations-layout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: var(--spacer-rem-300);
+}
+
+@media (min-width: 42em) {
+	.limitations-layout {
+		align-items: stretch;
+	}
+}
+
+@media (min-width: 72em) {
+	.limitations-layout {
+		--_shift: 6.25rem;
+
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	.limitations-layout > :first-child {
+		flex-grow: 2;
+		flex-basis: 50%;
+	}
+
+	.limitations-layout > :nth-child(2) {
+		margin-inline-end: var(--_shift);
+	}
+
+	.limitations-layout > :nth-child(3) {
+		margin-inline-start: var(--_shift);
+	}
+
+	.limitations-layout > :nth-child(6n) {
+		margin-inline-end: calc(2 * var(--_shift));
+	}
+}
