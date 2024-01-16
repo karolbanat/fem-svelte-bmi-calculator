@@ -28,7 +28,7 @@
 
 	$: lowerHealthyWeight = roundToNthDecimal(18.5 * Math.pow(centimeters / 100, 2), 1);
 	$: upperHealthyWeight = roundToNthDecimal(24.9 * Math.pow(centimeters / 100, 2), 1);
-	$: BMI = kilograms / Math.pow(centimeters / 100, 2);
+	$: BMI = roundToNthDecimal(kilograms / Math.pow(centimeters / 100, 2), 1);
 	$: classification = classifications
 		.filter(range => BMI >= range.lowerBound && BMI <= (range.upperBound || Number.MAX_SAFE_INTEGER))
 		.at(0);
@@ -42,7 +42,7 @@
 		<div class="even-columns-fluid" style="--fluid-size: 12.5rem">
 			<div>
 				<p class="bmi-kicker">Your BMI is...</p>
-				<p class="bmi-result">{roundToNthDecimal(BMI, 1)}</p>
+				<p class="bmi-result">{BMI}</p>
 			</div>
 			<div>
 				<p>
