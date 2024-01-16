@@ -3,10 +3,17 @@
 	import iconExercise from '/src/assets/icons/icon-exercise.svg';
 	import iconSleep from '/src/assets/icons/icon-sleep.svg';
 
+	import iconGender from '/src/assets/icons/icon-gender.svg';
+	import iconAge from '/src/assets/icons/icon-age.svg';
+	import iconMuscle from '/src/assets/icons/icon-muscle.svg';
+	import iconPregnancy from '/src/assets/icons/icon-pregnancy.svg';
+	import iconRace from '/src/assets/icons/icon-race.svg';
+
 	import BMIForm from './lib/BMIForm.svelte';
 	import HeaderBox from './lib/HeaderBox.svelte';
 	import Navigation from './lib/Navigation.svelte';
 	import TipCard from './lib/cards/TipCard.svelte';
+	import LimitationCard from './lib/cards/LimitationCard.svelte';
 </script>
 
 <header class="wrapper-grid">
@@ -68,6 +75,31 @@
 			message="Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific groups should carefully consider their BMI outcomes, and in certain cases, the measurement may not be beneficial to use."
 			centered={true}
 			paddedRight={true}
+		/>
+		<LimitationCard
+			icon={iconGender}
+			title="Gender"
+			text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content."
+		/>
+		<LimitationCard
+			icon={iconAge}
+			title="Age"
+			text="The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI."
+		/>
+		<LimitationCard
+			icon={iconMuscle}
+			title="Muscle"
+			text="BMI may misclassify muscular individuals as overweight or obese, as it doesn't differentiate muscle from fat."
+		/>
+		<LimitationCard
+			icon={iconPregnancy}
+			title="Pregnancy"
+			text="Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy pre-pregnancy BMI is advisable to minimise health risks for both mother and child."
+		/>
+		<LimitationCard
+			icon={iconRace}
+			title="Race"
+			text="Certain health concerns may affect individuals of some Black and Asian origins at lower BMIs than others. To learn more, it is advised to discuss this with your GP or practice nurse."
 		/>
 	</section>
 </main>
