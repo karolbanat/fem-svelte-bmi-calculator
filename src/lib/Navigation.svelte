@@ -1,8 +1,10 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Logo from '/src/images/icons/logo.svg';
+</script>
 
 <nav>
 	<a href="#" aria-label="Home page">
-		<img src="/assets/logo.svg" alt="" />
+		<img src={Logo} alt="" />
 	</a>
 </nav>
 

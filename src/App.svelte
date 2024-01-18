@@ -1,13 +1,15 @@
 <script lang="ts">
-	import iconEating from '/src/assets/icons/icon-eating.svg';
-	import iconExercise from '/src/assets/icons/icon-exercise.svg';
-	import iconSleep from '/src/assets/icons/icon-sleep.svg';
+	import imageManEating from '/src/images/image-man-eating.webp';
 
-	import iconGender from '/src/assets/icons/icon-gender.svg';
-	import iconAge from '/src/assets/icons/icon-age.svg';
-	import iconMuscle from '/src/assets/icons/icon-muscle.svg';
-	import iconPregnancy from '/src/assets/icons/icon-pregnancy.svg';
-	import iconRace from '/src/assets/icons/icon-race.svg';
+	import iconEating from '/src/images/icons/icon-eating.svg';
+	import iconExercise from '/src/images/icons/icon-exercise.svg';
+	import iconSleep from '/src/images/icons/icon-sleep.svg';
+
+	import iconGender from '/src/images/icons/icon-gender.svg';
+	import iconAge from '/src/images/icons/icon-age.svg';
+	import iconMuscle from '/src/images/icons/icon-muscle.svg';
+	import iconPregnancy from '/src/images/icons/icon-pregnancy.svg';
+	import iconRace from '/src/images/icons/icon-race.svg';
 
 	import BMIForm from './lib/BMIForm.svelte';
 	import HeaderBox from './lib/HeaderBox.svelte';
@@ -34,11 +36,7 @@
 	<section
 		class="meaning-section | even-columns-screen even-columns-screen--medium vertical-end-grid | section-spacer curved-line-left"
 	>
-		<img
-			src="/assets/images/image-man-eating.webp"
-			alt="Smiling man holding chopsticks with sushi roll."
-			class="meaning-section__image"
-		/>
+		<img src={imageManEating} alt="Smiling man holding chopsticks with sushi roll." class="meaning-section__image" />
 		<HeaderBox
 			headingLevel="h2"
 			headingText="What your BMI result means"
