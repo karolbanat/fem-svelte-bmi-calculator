@@ -7,17 +7,17 @@
 	const classifications = [
 		{
 			lowerBound: 0,
-			upperBound: 18.5,
+			upperBound: 18.49,
 			name: 'underweight',
 		},
 		{
 			lowerBound: 18.5,
-			upperBound: 24.9,
+			upperBound: 24.99,
 			name: 'healthy weight',
 		},
 		{
 			lowerBound: 25,
-			upperBound: 29.9,
+			upperBound: 29.99,
 			name: 'overweight',
 		},
 		{
@@ -26,9 +26,9 @@
 		},
 	];
 
-	$: lowerHealthyWeight = roundToNthDecimal(18.5 * Math.pow(centimeters / 100, 2), 1);
-	$: upperHealthyWeight = roundToNthDecimal(24.9 * Math.pow(centimeters / 100, 2), 1);
-	$: BMI = roundToNthDecimal(kilograms / Math.pow(centimeters / 100, 2), 1);
+	$: lowerHealthyWeight = roundToNthDecimal(18.5 * Math.pow(centimeters / 100, 2));
+	$: upperHealthyWeight = roundToNthDecimal(24.9 * Math.pow(centimeters / 100, 2));
+	$: BMI = roundToNthDecimal(kilograms / Math.pow(centimeters / 100, 2));
 	$: classification = classifications
 		.filter(range => BMI >= range.lowerBound && BMI <= (range.upperBound || Number.MAX_SAFE_INTEGER))
 		.at(0);
