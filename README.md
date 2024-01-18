@@ -16,7 +16,7 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: [Solution page](https://your-solution-url.com)
+- Solution URL: [Solution page](https://www.frontendmentor.io/solutions/bmi-calculator-with-svelte-F8l92k7plP)
 - Live Site URL: [GitHub Pages Site](https://karolbanat.github.io/fem-svelte-bmi-calculator/)
 
 ## Built with
