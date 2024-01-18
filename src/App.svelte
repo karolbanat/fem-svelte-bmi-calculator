@@ -81,12 +81,12 @@
 		<LimitationCard
 			icon={iconGender}
 			title="Gender"
-			text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content."
+			text="The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI."
 		/>
 		<LimitationCard
 			icon={iconAge}
 			title="Age"
-			text="The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI."
+			text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content."
 		/>
 		<LimitationCard
 			icon={iconMuscle}
