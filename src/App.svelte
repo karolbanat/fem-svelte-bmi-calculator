@@ -31,7 +31,9 @@
 	</div>
 </header>
 <main class="wrapper-grid">
-	<section class="meaning-section | even-columns-screen even-columns-screen--medium vertical-end-grid | section-spacer">
+	<section
+		class="meaning-section | even-columns-screen even-columns-screen--medium vertical-end-grid | section-spacer curved-line-left"
+	>
 		<img
 			src="/assets/images/image-man-eating.webp"
 			alt="Smiling man holding chopsticks with sushi roll."
@@ -68,7 +70,7 @@
 		</div>
 	</section>
 
-	<section class="limitations-layout | section-spacer">
+	<section class="limitations-layout | section-spacer curved-line-right">
 		<HeaderBox
 			headingLevel="h2"
 			headingText="Limitations of BMI"

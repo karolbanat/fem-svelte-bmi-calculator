@@ -235,6 +235,20 @@ h2 {
 	margin-block-end: var(--section-spacer, 3em);
 }
 
+@media (min-width: 72em) {
+	.curved-line-left {
+		background-image: url('/assets/images/pattern-curved-line-left.svg');
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+	}
+
+	.curved-line-right {
+		background-image: url('/assets/images/pattern-curved-line-right.svg');
+		background-repeat: no-repeat;
+		background-position: 15% 45%;
+	}
+}
+
 /* Layout */
 .wrapper-grid {
 	--max-width: 72.5rem;
